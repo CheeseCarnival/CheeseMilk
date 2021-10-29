@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    nacos:
+      username: nacos
+  application:
+    name: gateway
+server:
+  port: 51471

@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  gateway:
+    image: xxxcrel/niot-gateway
+    container_name: niot-gateway
+  search:
+    image: xxxcrel/niot-search
+    container_name: niot-search
+  authentication:
+    image: xxxcrel/niot-authentication
+    container_name: niot-authentication
