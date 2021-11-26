@@ -1,0 +1,5 @@
+version: "3.9"
+services:
+  rocketmq:
+    image: apache/rocketmq
+    container_name: rocketmq
