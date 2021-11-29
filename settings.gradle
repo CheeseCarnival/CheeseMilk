@@ -14,4 +14,5 @@ include 'common'
 include 'niot'
 include 'search'
 include 'search'
+include 'registry'
 

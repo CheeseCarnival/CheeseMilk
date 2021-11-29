@@ -2,19 +2,19 @@ version: "3.9"
 services:
   redis:
     image: redis:6.2
-    container_name: redis
+    container_name: redis-qisee
     ports:
-      - "6389:6389"
-  es:
-    image: elasticsearch:7.12.1
-    container_name: es
-    env_file:
-      - ./env/elasticsearch.env
-    ports:
-      - "9200:9200"
+      - "6379:6379"
+#  es:
+#    image: elasticsearch:7.12.1
+#    container_name: es-qisee
+#    env_file:
+#      - ./env/elasticsearch.env
+#    ports:
+#      - "9200:9200"
   mysql:
     image: mysql:8.0.16
-    container_name: mysql
+    container_name: mysql-qisee
     env_file:
       - ./env/mysql.env
     ports:
