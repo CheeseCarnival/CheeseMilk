@@ -12,11 +12,11 @@ services:
 #      - ./env/elasticsearch.env
 #    ports:
 #      - "9200:9200"
-  mysql:
+  mysql-biz:
     image: mysql:8.0.16
-    container_name: mysql-qisee
+    container_name: mysql-biz
     env_file:
-      - ./env/mysql.env
+      - ./env/mysql-biz.env
     ports:
       - "3306:3306"
 networks:
