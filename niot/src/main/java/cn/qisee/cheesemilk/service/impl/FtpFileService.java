@@ -1,8 +1,8 @@
 package cn.qisee.cheesemilk.service.impl;
 
-import cn.qisee.cheesemilk.repository.UserRepository;
+import cn.qisee.common.repository.UserRepository;
 import cn.qisee.cheesemilk.service.FileService;
-import cn.qisee.cheesemilk.util.FtpUtils;
+import cn.qisee.common.util.FtpUtils;
 import io.jsonwebtoken.lang.Assert;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

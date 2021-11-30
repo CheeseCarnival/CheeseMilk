@@ -2,7 +2,7 @@ package cn.qisee.cheesemilk.service.impl;
 
 import cn.qisee.cheesemilk.constant.AppConstants;
 import cn.qisee.cheesemilk.service.FileService;
-import cn.qisee.cheesemilk.util.StreamUtils;
+import cn.qisee.common.util.StreamUtils;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

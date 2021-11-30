@@ -1,6 +1,6 @@
 package cn.qisee.cheesemilk.service;
 
-import static cn.qisee.cheesemilk.web.api.MultiDataQueryController.DateTuple;
+import static cn.qisee.cheesemilk.api.MultiDataQueryController.DateTuple;
 
 import java.util.HashSet;
 import java.util.List;
@@ -23,12 +23,12 @@ import cn.qisee.cheesemilk.entity.Category;
 import cn.qisee.cheesemilk.entity.Image;
 import cn.qisee.cheesemilk.entity.Post;
 import cn.qisee.cheesemilk.entity.User;
-import cn.qisee.cheesemilk.repository.CategoryRepository;
-import cn.qisee.cheesemilk.repository.PostRepository;
-import cn.qisee.cheesemilk.repository.StarRepository;
-import cn.qisee.cheesemilk.repository.UserRepository;
-import cn.qisee.cheesemilk.security.acl.AclDTO;
-import cn.qisee.cheesemilk.security.acl.AclManager;
+import cn.qisee.common.repository.CategoryRepository;
+import cn.qisee.common.repository.PostRepository;
+import cn.qisee.common.repository.StarRepository;
+import cn.qisee.common.repository.UserRepository;
+import cn.qisee.gateway.security.acl.AclDTO;
+import cn.qisee.gateway.security.acl.AclManager;
 import beer.cheese.view.vo.PostVO;
 import io.jsonwebtoken.lang.Assert;
 

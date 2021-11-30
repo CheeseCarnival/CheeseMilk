@@ -2,6 +2,15 @@ spring:
   cloud:
     nacos:
       username: nacos
+    gateway:
+      enabled: true
+      globalcors:
+        cors-configurations:
+      discovery:
+        locator:
+          enabled: true
+
+
   application:
     name: gateway
 server:

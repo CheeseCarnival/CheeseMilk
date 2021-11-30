@@ -1,6 +1,6 @@
 package cn.qisee.cheesemilk.service;
 
-import cn.qisee.cheesemilk.repository.CategoryRepository;
+import cn.qisee.common.repository.CategoryRepository;
 import cn.qisee.cheesemilk.entity.Category;
 import beer.cheese.view.vo.CategoryVO;
 

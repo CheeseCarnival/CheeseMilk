@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'io.spring.dependency-management'
+    id 'org.springframework.boot'
 }
 
 group 'cn.qisee'
@@ -17,9 +18,20 @@ ext{
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    // Spring Security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.security:spring-security-acl:5.5.0'
+    // Spring Session
+    implementation 'org.springframework.session:spring-session-data-redis'
+    // Spring Cloud Gateway
     implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
+    // Redis luttuce client
+    implementation 'io.lettuce:lettuce-core:6.1.0.RELEASE'
+    // Alibaba Nacos
     implementation 'com.alibaba.cloud:spring-cloud-alibaba-dependencies:2021.1'
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2021.1'
+
+    implementation project(':common')
 }
 
 dependencyManagement {
