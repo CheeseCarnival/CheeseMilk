@@ -1,0 +1,10 @@
+spring:
+  elasticsearch:
+    rest:
+      uris: http://localhost:9200
+  jackson:
+    property-naming-strategy: UPPER_CAMEL_CASE
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true

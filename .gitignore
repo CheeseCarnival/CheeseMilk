@@ -1,5 +1,9 @@
 .gradle
 .idea
 build
+target
 out
 .vscode
+**/build
+**/out
+**/target
