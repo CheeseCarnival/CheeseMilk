@@ -6,6 +6,3 @@ services:
   search:
     image: xxxcrel/niot-search
     container_name: niot-search
-  auth:
-    image: xxxcrel/niot-authentication
-    container_name: niot-authentication

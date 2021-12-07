@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.NamedAttributeNode;
 import javax.persistence.NamedEntityGraph;
 import javax.persistence.OneToMany;
@@ -30,12 +31,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@NamedEntityGraph(
-        name = "Post.details",
-        attributeNodes = {
-                @NamedAttributeNode("images"),
-        }
-)
+@MappedSuperclass
 public class Blog extends BasicEntity {
 
     private String content;
