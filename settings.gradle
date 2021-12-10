@@ -16,4 +16,5 @@ include 'search'
 include 'registry'
 include 'timetable'
 include 'resource-server'
+include 'websocket-server'
 

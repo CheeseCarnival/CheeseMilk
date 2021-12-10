@@ -1,4 +1,4 @@
-package cn.qisee.gateway.security.acl;
+package cn.qisee.common.acl;
 
 import org.springframework.security.acls.domain.GrantedAuthoritySid;
 import org.springframework.security.acls.domain.PrincipalSid;

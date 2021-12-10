@@ -10,8 +10,9 @@ spring:
         locator:
           enabled: true
 
-
   application:
     name: gateway
+  redis:
+    password: www.qisee.cn
 server:
   port: 51471

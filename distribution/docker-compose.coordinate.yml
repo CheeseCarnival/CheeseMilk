@@ -10,7 +10,7 @@ services:
       - "9848:9848"
       - "9555:9555"
     volumes:
-      - "./init.d/nacos.properties:/home/nacos/init.d/custom.properties"
+      - "./conf/nacos.properties:/home/nacos/init.d/custom.properties"
     restart: always
   mysql-nacos:
     container_name: cheese-mysql-nacos

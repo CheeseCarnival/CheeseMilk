@@ -1,4 +1,4 @@
-package cn.qisee.gateway.security.acl.model;
+package cn.qisee.common.acl.model;
 
 import javax.persistence.Column;
 import javax.persistence.Id;

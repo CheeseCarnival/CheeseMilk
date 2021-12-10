@@ -22,9 +22,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
 public class Course extends BasicEntity {
     private String semester;
 

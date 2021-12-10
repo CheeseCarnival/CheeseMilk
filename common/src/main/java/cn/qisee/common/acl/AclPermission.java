@@ -1,4 +1,4 @@
-package cn.qisee.gateway.security.acl;
+package cn.qisee.common.acl;
 
 public enum AclPermission {
         READ("read"),

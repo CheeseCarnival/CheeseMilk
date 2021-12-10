@@ -31,7 +31,7 @@ dependencies {
     implementation 'com.alibaba.cloud:spring-cloud-alibaba-dependencies:2021.1'
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2021.1'
 
-    implementation project(':common')
+//    implementation project(':common')
 }
 
 dependencyManagement {

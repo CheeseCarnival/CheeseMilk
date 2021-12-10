@@ -27,8 +27,8 @@ import cn.qisee.common.repository.CategoryRepository;
 import cn.qisee.common.repository.PostRepository;
 import cn.qisee.common.repository.StarRepository;
 import cn.qisee.common.repository.UserRepository;
-import cn.qisee.gateway.security.acl.AclDTO;
-import cn.qisee.gateway.security.acl.AclManager;
+import cn.qisee.common.acl.AclDTO;
+import cn.qisee.common.acl.AclManager;
 import beer.cheese.view.vo.PostVO;
 import io.jsonwebtoken.lang.Assert;
 

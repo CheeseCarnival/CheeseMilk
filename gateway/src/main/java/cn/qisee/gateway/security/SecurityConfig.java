@@ -5,11 +5,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.core.userdetails.MapReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.server.SecurityWebFilterChain;
+
+import cn.qisee.gateway.filter.AuthFilter;
 
 @Configuration
 @EnableReactiveMethodSecurity
@@ -22,7 +25,9 @@ public class SecurityConfig {
         http.authorizeExchange((authorize) -> {
             authorize.pathMatchers("/token").permitAll()
                     .anyExchange().authenticated();
-        }).formLogin(Customizer.withDefaults());
+        })
+                .httpBasic().and()
+                .formLogin(Customizer.withDefaults());
         // @formatter:on
         return http.build();
     }
@@ -31,8 +36,8 @@ public class SecurityConfig {
     MapReactiveUserDetailsService userDetailsService() {
         // @formatter:off
         UserDetails user = User.withDefaultPasswordEncoder()
-                .username("user")
-                .password("password")
+                .username("qisee")
+                .password("www.qisee.cn")
                 .roles("USER")
                 .build();
         UserDetails admin = User.withDefaultPasswordEncoder()
