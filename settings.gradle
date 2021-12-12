@@ -7,6 +7,9 @@ pluginManagement{
         id 'org.jetbrains.kotlin.jvm' version '1.4.10'
     }
 }
+
+
+
 rootProject.name = 'CheeseMilk'
 include 'registry'
 include 'gateway'

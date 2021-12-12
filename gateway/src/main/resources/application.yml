@@ -4,8 +4,6 @@ spring:
       username: nacos
     gateway:
       enabled: true
-      globalcors:
-        cors-configurations:
       discovery:
         locator:
           enabled: true
@@ -14,5 +12,6 @@ spring:
     name: gateway
   redis:
     password: www.qisee.cn
+    client-type: lettuce
 server:
   port: 51471
