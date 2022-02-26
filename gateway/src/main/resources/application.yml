@@ -7,11 +7,20 @@ spring:
       discovery:
         locator:
           enabled: true
-
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: google-client-id
+            client-secret: google-client-secret
+          github:
+            client-id: 282b490d618cb0262c21
+            client-secret: f9d1e38fef7a5d52687eb19c4e5a0de547adb1c1
   application:
     name: gateway
   redis:
-    password: www.qisee.cn
+    password: www.cheeseocean.com
     client-type: lettuce
 server:
   port: 51471

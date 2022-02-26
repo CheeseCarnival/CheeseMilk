@@ -4,7 +4,7 @@ plugins {
     id 'org.springframework.boot'
 }
 
-group 'cn.qisee'
+group 'com.cheeseocean'
 version '1.0'
 
 repositories {
@@ -20,6 +20,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     // Spring Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.security:spring-security-acl:5.5.0'
     // Spring Session
     implementation 'org.springframework.session:spring-session-data-redis'

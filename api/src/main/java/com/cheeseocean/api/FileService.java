@@ -1,4 +1,6 @@
 package com.cheeseocean.api;
 
-public class FileService {
+public interface FileService {
+
+    void uploadFile();
 }

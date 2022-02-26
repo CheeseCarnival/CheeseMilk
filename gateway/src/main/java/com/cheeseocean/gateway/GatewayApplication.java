@@ -14,5 +14,4 @@ public class GatewayApplication {
                 .sources(GatewayApplication.class)
                 .run(args);
     }
-
 }
