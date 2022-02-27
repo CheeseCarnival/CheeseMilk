@@ -24,6 +24,7 @@ public class SecurityConfig {
                     .anyExchange().authenticated();
         })
                 .httpBasic().and()
+                .oauth2Login().and()
                 .formLogin(Customizer.withDefaults());
         // @formatter:on
         return http.build();
