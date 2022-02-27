@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class CategoryService {
 
-    @Autowired
-    private CategoryRepository categoryRepository;
-
-    public Page<Category> listCategories(Pageable pageable) {
-        return categoryRepository.findAll(pageable);
-    }
+//    @Autowired
+//    private CategoryRepository categoryRepository;
+//
+//    public Page<Category> listCategories(Pageable pageable) {
+//        return categoryRepository.findAll(pageable);
+//    }
 
 }

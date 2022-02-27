@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.MapReactiveUserDetailsServi
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.security.web.server.authentication.RedirectServerAuthenticationSuccessHandler;
 
 @Configuration
 @EnableReactiveMethodSecurity
@@ -25,7 +26,8 @@ public class SecurityConfig {
         })
                 .httpBasic().and()
                 .oauth2Login().and()
-                .formLogin(Customizer.withDefaults());
+                .formLogin()
+                .authenticationSuccessHandler(new RedirectServerAuthenticationSuccessHandler("/core/user"));
         // @formatter:on
         return http.build();
     }
@@ -34,13 +36,13 @@ public class SecurityConfig {
     MapReactiveUserDetailsService userDetailsService() {
         // @formatter:off
         UserDetails user = User.withDefaultPasswordEncoder()
-                .username("qisee")
-                .password("www.qisee.cn")
+                .username("user")
+                .password("user")
                 .roles("USER")
                 .build();
         UserDetails admin = User.withDefaultPasswordEncoder()
                 .username("admin")
-                .password("password")
+                .password("admin")
                 .roles("ADMIN", "USER")
                 .build();
         // @formatter:on

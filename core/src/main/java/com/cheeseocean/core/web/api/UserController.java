@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -13,9 +14,9 @@ import com.cheeseocean.core.service.UserService;
 
 
 @RestController
-@RequestMapping
-@Validated
-@SessionAttributes(value = "verifyDTO")
+@RequestMapping("/user")
+//@Validated
+//@SessionAttributes(value = "verifyDTO")
 public class UserController {
 
     private final Logger logger = LoggerFactory.getLogger(getClass().getName());
@@ -25,6 +26,12 @@ public class UserController {
 
     @Autowired
     private PostService postService;
+
+
+    @GetMapping
+    public String greeting(){
+        return "hello world";
+    }
 
 //    @Autowired
 //    private StarRepository starRepository;

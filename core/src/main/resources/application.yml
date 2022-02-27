@@ -1,8 +1,10 @@
 server:
-  port: 5147
+  port: 7401
   error:
     include-exception: on
 spring:
+  application:
+    name: core
   datasource:
     type: org.apache.commons.dbcp2.BasicDataSource
   profiles:
@@ -20,10 +22,13 @@ spring:
       enabled: detect
   mvc:
     throw-exception-if-no-handler-found: true
-  sql:
-    init:
-      enabled: true
-      schema-locations: classpath:createAclSchemaMySQL.sql
-      encoding: UTF-8
+#  sql:
+#    init:
+#      enabled: true
+#      schema-locations: classpath:createAclSchemaMySQL.sql
+#      encoding: UTF-8
   web:
     locale: zh_CN
+  redis:
+    client-name: luttece
+    password: cheeseocean.com

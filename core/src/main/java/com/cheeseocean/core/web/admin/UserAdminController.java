@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/admin")
 public class UserAdminController {
 
-    @Autowired
-    private UserService userService;
-
-
 
     @PostMapping(path = "/users/{username}/roles", params = "role")
     @ResponseStatus(value = HttpStatus.CREATED)

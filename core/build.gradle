@@ -20,6 +20,8 @@ dependencies {
 
     implementation project(':common')
     implementation project(':api')
+
+    implementation 'com.h2database:h2:1.4.200'
     implementation 'mysql:mysql-connector-java:8.0.16'
     implementation 'org.apache.commons:commons-dbcp2:2.7.0'
     implementation 'com.sun.mail:javax.mail:1.6.2'
@@ -47,10 +49,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-cache'
     //Spring Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.security:spring-security-acl:5.5.0'
+//    implementation 'org.springframework.security:spring-security-acl:5.5.0'
     //Spring Session
     implementation 'org.springframework.session:spring-session-data-redis'
+
+    implementation 'io.lettuce:lettuce-core:6.1.0.RELEASE'
     //alibaba nacos
     implementation 'com.alibaba.cloud:spring-cloud-alibaba-dependencies:2021.1'
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2021.1'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }

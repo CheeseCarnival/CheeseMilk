@@ -27,9 +27,9 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping
-    public Page<Category> getCategories(@PageableDefault Pageable pageable){
-        return categoryService.listCategories(pageable);
-    }
+//    @GetMapping
+//    public Page<Category> getCategories(@PageableDefault Pageable pageable){
+//        return categoryService.listCategories(pageable);
+//    }
 
 }

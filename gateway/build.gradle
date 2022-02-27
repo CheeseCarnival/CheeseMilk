@@ -11,9 +11,6 @@ repositories {
     mavenCentral()
 }
 
-ext{
-    set("springCloudVersion", "2020.0.4")
-}
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
