@@ -7,7 +7,7 @@ import org.springframework.web.server.WebFilterChain;
 
 import reactor.core.publisher.Mono;
 
-@Service
+//@Service
 public class AuthFilter implements WebFilter {
 
     @Override

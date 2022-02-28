@@ -55,12 +55,12 @@ dependencies {
 
     implementation 'io.lettuce:lettuce-core:6.1.0.RELEASE'
     //alibaba nacos
-    implementation 'com.alibaba.cloud:spring-cloud-alibaba-dependencies:2021.1'
-    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2021.1'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
 }
 
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${alibabaCloudVersion}"
     }
 }

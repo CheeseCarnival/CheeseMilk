@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: sfo.cheeseocean.com:8848
+  redis:
+    password: cheeseocean.com
+    client-type: lettuce
+    host: sfo.cheeseocean.com

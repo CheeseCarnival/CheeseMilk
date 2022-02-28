@@ -2,6 +2,8 @@ spring:
   cloud:
     nacos:
       username: nacos
+      discovery:
+        server-addr: sfo.cheeseocean.com:8848
     gateway:
       enabled: true
       discovery:
@@ -20,9 +22,8 @@ spring:
             client-secret: 0fefd4eacb906d3c79736239dd6ff47c76999835
   application:
     name: gateway
-  redis:
-    password: cheeseocean.com
-    client-type: lettuce
+  profiles:
+    active: dev
 server:
   port: 7404
 logging:

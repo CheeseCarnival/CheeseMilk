@@ -1,5 +1,6 @@
 ext{
     set("springCloudVersion", "2021.0.1")
+    set("alibabaCloudVersion", "2021.0.1.0")
 }
 allprojects{
     repositories {

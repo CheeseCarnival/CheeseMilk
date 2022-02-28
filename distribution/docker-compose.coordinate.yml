@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   nacos:
-    image: nacos/nacos-server:2.0.3
+    image: nacos/nacos-server:1.4.3
     container_name: cheese-nacos
     env_file:
       - ./env/nacos.env
