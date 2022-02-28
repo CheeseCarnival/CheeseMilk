@@ -31,9 +31,3 @@ spring:
     locale: zh_CN
   redis:
     client-name: luttece
-    password: cheeseocean.com
-  cloud:
-    nacos:
-      discovery:
-        enabled: true
-        server-addr: sfo.cheeseocean.com:8848

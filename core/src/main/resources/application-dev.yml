@@ -17,8 +17,6 @@ spring:
     database: h2
   cloud:
     nacos:
-      discovery:
-        enabled: true
       server-addr: sfo.cheeseocean.com
       username: nacos
   redis:

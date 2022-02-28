@@ -27,25 +27,25 @@ public class GatewayApplication {
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
-    @RestController
-    static class TestController{
-
-
-        @Autowired
-        private RestTemplate restTemplate;
-        @Autowired
-        private LoadBalancerClient loadBalancerClient;
-
-        @Value("${spring.application.name}")
-        private String appName;
-
-        @GetMapping("/echo/app-name")
-        public String echoAppName(){
-            //Access through the combination of LoadBalanceClient and RestTemplate
-            ServiceInstance serviceInstance = loadBalancerClient.choose("core");
-            String path = String.format("http://%s:%s/echo/%s",serviceInstance.getHost(),serviceInstance.getPort(),appName);
-            System.out.println("request path:" +path);
-            return restTemplate.getForObject(path,String.class);
-        }
-    }
+//    @RestController
+//    static class TestController{
+//
+//
+//        @Autowired
+//        private RestTemplate restTemplate;
+//        @Autowired
+//        private LoadBalancerClient loadBalancerClient;
+//
+//        @Value("${spring.application.name}")
+//        private String appName;
+//
+//        @GetMapping("/echo/app-name")
+//        public String echoAppName(){
+//            //Access through the combination of LoadBalanceClient and RestTemplate
+//            ServiceInstance serviceInstance = loadBalancerClient.choose("core");
+//            String path = String.format("http://%s:%s/echo/%s",serviceInstance.getHost(),serviceInstance.getPort(),appName);
+//            System.out.println("request path:" +path);
+//            return restTemplate.getForObject(path,String.class);
+//        }
+//    }
 }

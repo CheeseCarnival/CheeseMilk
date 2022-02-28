@@ -1,9 +1,5 @@
 spring:
   cloud:
-    nacos:
-      username: nacos
-      discovery:
-        server-addr: sfo.cheeseocean.com:8848
     gateway:
       enabled: true
       discovery:
@@ -24,6 +20,8 @@ spring:
     name: gateway
   profiles:
     active: dev
+  redis:
+    client-type: lettuce
 server:
   port: 7404
 logging:
