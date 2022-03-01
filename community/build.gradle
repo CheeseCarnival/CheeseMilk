@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'cn.qisee'
+group 'com.cheeseocean'
 version '1.0.0'
 
 repositories {

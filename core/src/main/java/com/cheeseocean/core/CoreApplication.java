@@ -21,9 +21,9 @@ public class CoreApplication {
     @RestController
     static class TestController{
 
-        @GetMapping("/echo/{name}")
-        public String echo(@PathVariable String name){
-            return name;
+        @GetMapping("/user/info")
+        public String echo(){
+            return "admin";
         }
     }
 }
