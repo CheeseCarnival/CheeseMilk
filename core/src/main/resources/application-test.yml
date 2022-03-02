@@ -1,9 +1,9 @@
 spring:
   datasource:
     username: root
-    password: xc514xxx
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://korea.cheeseocean.com:3306/cheeseocean
+    password: root
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/cheese_house
   h2:
     console:
       enabled: true
@@ -13,9 +13,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.MySQL8Dialect
-    database: mysql
-    generate-ddl: true
+        dialect: org.hibernate.dialect.H2Dialect
+    database: h2
   cloud:
     nacos:
       server-addr: sfo.cheeseocean.com

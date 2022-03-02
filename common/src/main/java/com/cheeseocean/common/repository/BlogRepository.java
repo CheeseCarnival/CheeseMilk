@@ -19,8 +19,6 @@ import com.cheeseocean.common.entity.User;
 @Repository
 public interface BlogRepository extends JpaRepository<Blog, Long> {
 
-    Page<Blog> getAllByUserAndCreatedAtAfterAndCreatedAtBefore(User user, LocalDateTime start, LocalDateTime end, Pageable pageable);
-
     Page<Blog> getAllByCategory(Category category, Pageable pageable);
 
     Page<Blog> getAllByCategoryAndCreatedAtAfterAndCreatedAtBefore(Category category, LocalDateTime start, LocalDateTime end, Pageable pageable);
@@ -33,13 +31,13 @@ public interface BlogRepository extends JpaRepository<Blog, Long> {
     @Query("update Blog p set p.starCount = p.starCount + :increment where p.id = :pid")
     void updateStars(@Param("pid") Long pid, @Param("increment") int increment);
 
-    @EntityGraph(attributePaths = {"posts"}, type = EntityGraph.EntityGraphType.FETCH)
-    User findByNickname(String nickname);
-
-    @EntityGraph("User.postsFetchAll")
-    @Query("select u from User u where u.nickname = :nickname")
-    User fetchAllByNickname(@Param("nickname") String nickname);
-
-    @EntityGraph("User.postsFetchImages")
-    User getByNickname(String nickname);
+//    @EntityGraph(attributePaths = {"posts"}, type = EntityGraph.EntityGraphType.FETCH)
+//    User findByNickname(String nickname);
+//
+//    @EntityGraph("User.postsFetchAll")
+//    @Query("select u from User u where u.nickname = :nickname")
+//    User fetchAllByNickname(@Param("nickname") String nickname);
+//
+//    @EntityGraph("User.postsFetchImages")
+//    User getByNickname(String nickname);
 }

@@ -9,14 +9,9 @@ spring:
     type: org.apache.commons.dbcp2.BasicDataSource
   profiles:
     active: dev
-  data:
-    jpa:
-      repositories:
-        enabled: true
   jpa:
     open-in-view: false
     show-sql: true
-    generate-ddl: true
   output:
     ansi:
       enabled: detect

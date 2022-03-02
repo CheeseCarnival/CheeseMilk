@@ -1,5 +1,6 @@
 package com.cheeseocean.common.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -17,8 +18,6 @@ import lombok.Setter;
 public class Role extends BasicEntity{
 
     private String name;
-
-    private String desc;
 
     private int permissions;
 

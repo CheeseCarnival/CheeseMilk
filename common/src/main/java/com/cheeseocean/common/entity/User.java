@@ -2,12 +2,14 @@ package com.cheeseocean.common.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicInsert;
@@ -33,13 +35,12 @@ public class User extends BasicEntity implements Serializable {
     private static final long serialVersionUID = 749792921653839187L;
 
     //eg:studentId, teacherId, staffId...
-    @Column(name = "cheese_id", unique = true)
+    @Column(name = "username", unique = true)
     private String username;
 
-    private String nickname;
+    private String password;
 
-    @Enumerated(EnumType.ORDINAL)
-    private UserType type;
+    private String nickname;
 
     @Column(name = "status")
     @Enumerated(EnumType.ORDINAL)
@@ -48,6 +49,7 @@ public class User extends BasicEntity implements Serializable {
     @Column(name = "email", unique = true)
     private String email;
 
+    @Column(name = "avatar_url")
     private String avatarUrl;
 
     //eg:0793-江西上饶、0731-湖南长沙
@@ -60,9 +62,8 @@ public class User extends BasicEntity implements Serializable {
     //0-male, 1-female
     private Integer gender;
 
-    public enum UserType {
-        STUDENT, TEACHER, STAFF
-    }
+    @OneToMany
+    private Set<Role> roles;
 
     public enum UserStatus {
         ENABLE, OFFLINE, ONLINE, DISABLED, ACCOUNT_LOCKED

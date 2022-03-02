@@ -5,3 +5,8 @@ spring:
   redis:
     password: cheeseocean.com
     host: sfo.cheeseocean.com
+  r2dbc:
+    password: xc514xxx
+    username: root
+    name: cheeseocean
+    url: r2dbcs:mysql://korea.cheeseocean.com:3306/cheeseocean

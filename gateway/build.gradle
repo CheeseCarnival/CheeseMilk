@@ -14,9 +14,13 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation project(':common')
+
     // Spring Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    // Spring Data JPA and R2DBC
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
     implementation 'org.springframework.security:spring-security-acl:5.5.0'
     // Spring Session
     implementation 'org.springframework.session:spring-session-data-redis'
@@ -25,12 +29,11 @@ dependencies {
     // Spring Cloud Gateway
     implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
     implementation 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
-    // Redis luttuce client
+    // Redis lettuce client
     implementation 'io.lettuce:lettuce-core:6.1.0.RELEASE'
     // Alibaba Nacos
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
     implementation 'com.github.jasync-sql:jasync-mysql:2.0.5'
-    implementation project(':common')
 }
 
 dependencyManagement {
