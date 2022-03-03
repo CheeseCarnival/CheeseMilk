@@ -4,18 +4,16 @@ spring:
     password: xc514xxx
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://korea.cheeseocean.com:3306/cheeseocean
-  h2:
-    console:
-      enabled: true
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MySQL8Dialect
     database: mysql
     generate-ddl: true
+    show-sql: true
   cloud:
     nacos:
       server-addr: sfo.cheeseocean.com

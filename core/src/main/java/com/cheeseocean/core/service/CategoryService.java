@@ -1,7 +1,7 @@
 package com.cheeseocean.core.service;
 
 import com.cheeseocean.common.entity.Category;
-import com.cheeseocean.common.repository.CategoryRepository;
+//import com.cheeseocean.common.repository.CategoryRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

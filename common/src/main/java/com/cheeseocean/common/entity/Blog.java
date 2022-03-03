@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,7 +25,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@MappedSuperclass
 public class Blog extends BasicEntity {
 
     private String content;

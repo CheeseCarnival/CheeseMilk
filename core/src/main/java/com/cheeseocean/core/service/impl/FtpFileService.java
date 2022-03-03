@@ -1,21 +1,11 @@
 package com.cheeseocean.core.service.impl;
 
-import com.cheeseocean.common.exception.ExpectedException;
-import com.cheeseocean.common.repository.UserRepository;
-import com.cheeseocean.common.util.FtpUtils;
-import com.cheeseocean.core.service.FileService;
-import io.jsonwebtoken.lang.Assert;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.commons.net.ftp.FTPClient;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
+import java.util.Map;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Map;
+import com.cheeseocean.core.service.FileService;
 
 @Service("ftpFileService")
 //@PropertySource("classpath:ftp.properties")

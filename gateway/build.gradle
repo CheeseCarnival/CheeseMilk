@@ -7,10 +7,6 @@ plugins {
 group 'com.cheeseocean'
 version '1.0'
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
@@ -33,14 +29,14 @@ dependencies {
     implementation 'io.lettuce:lettuce-core:6.1.0.RELEASE'
     // Alibaba Nacos
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
-    implementation 'com.github.jasync-sql:jasync-mysql:2.0.5'
+    implementation 'com.github.jasync-sql:jasync-r2dbc-mysql:2.0.5'
 }
 
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
         mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${alibabaCloudVersion}"
-        mavenBom "io.r2dbc:r2dbc-bom:Borca-RELEASE"
+        mavenBom "io.r2dbc:r2dbc-bom:${springDataR2DBC}"
     }
 }
 

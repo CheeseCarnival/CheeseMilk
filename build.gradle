@@ -1,6 +1,7 @@
 ext{
     set("springCloudVersion", "2021.0.1")
     set("alibabaCloudVersion", "2021.0.1.0")
+    set("springDataR2DBC", "Borca-RELEASE")
 }
 allprojects{
     repositories {

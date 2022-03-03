@@ -11,17 +11,11 @@ spring:
     active: dev
   jpa:
     open-in-view: false
-    show-sql: true
   output:
     ansi:
       enabled: detect
   mvc:
     throw-exception-if-no-handler-found: true
-#  sql:
-#    init:
-#      enabled: true
-#      schema-locations: classpath:createAclSchemaMySQL.sql
-#      encoding: UTF-8
   web:
     locale: zh_CN
   redis:

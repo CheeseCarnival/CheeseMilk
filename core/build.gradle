@@ -8,11 +8,6 @@ plugins {
 group 'com.cheeseocean'
 version '1.0'
 
-repositories {
-    maven { url 'https://maven.aliyun.com/repository/central' }
-    maven { url 'https://maven.aliyun.com/repository/public' }
-}
-
 dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.12'
 

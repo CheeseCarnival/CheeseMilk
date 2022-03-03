@@ -9,4 +9,4 @@ spring:
     password: xc514xxx
     username: root
     name: cheeseocean
-    url: r2dbcs:mysql://korea.cheeseocean.com:3306/cheeseocean
+    url: r2dbc:pool:mysql://korea.cheeseocean.com:3306/cheeseocean

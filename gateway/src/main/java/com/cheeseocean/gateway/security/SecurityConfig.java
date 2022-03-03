@@ -1,11 +1,16 @@
 package com.cheeseocean.gateway.security;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.ResolvableType;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.codec.json.Jackson2JsonDecoder;
+import org.springframework.http.codec.json.Jackson2JsonEncoder;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.authentication.UserDetailsRepositoryReactiveAuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -77,7 +82,7 @@ public class SecurityConfig {
         }));
         loginFilter.setSecurityContextRepository(new WebSessionServerSecurityContextRepository());
         loginFilter.setRequiresAuthenticationMatcher(ServerWebExchangeMatchers.pathMatchers(HttpMethod.POST, "/login"));
-        loginFilter.setAuthenticationSuccessHandler(new RedirectServerAuthenticationSuccessHandler("/home"));
+        loginFilter.setAuthenticationSuccessHandler(new RedirectServerAuthenticationSuccessHandler("/core/user"));
         loginFilter.setAuthenticationFailureHandler(new RedirectServerAuthenticationFailureHandler("/login?error"));
         return loginFilter;
     }
