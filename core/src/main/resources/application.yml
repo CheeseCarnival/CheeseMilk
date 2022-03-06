@@ -2,10 +2,6 @@ server:
   port: 7401
   error:
     include-exception: on
-  servlet:
-    session:
-      cookie:
-        name: SESSION
 spring:
   application:
     name: core
@@ -24,3 +20,5 @@ spring:
     locale: zh_CN
   redis:
     client-name: luttece
+  config:
+    import: classpath:application-common.yml

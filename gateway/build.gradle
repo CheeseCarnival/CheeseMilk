@@ -17,7 +17,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     // Spring Data JPA and R2DBC
     implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
-    implementation 'org.springframework.security:spring-security-acl:5.5.0'
     // Spring Session
     implementation 'org.springframework.session:spring-session-data-redis'
     // Spring Data R2DBC
