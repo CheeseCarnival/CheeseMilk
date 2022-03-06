@@ -10,8 +10,8 @@ version '1.0'
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation project(':common')
-
     // Spring Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
@@ -29,7 +29,12 @@ dependencies {
     implementation 'io.lettuce:lettuce-core:6.1.0.RELEASE'
     // Alibaba Nacos
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
-    implementation 'com.github.jasync-sql:jasync-r2dbc-mysql:2.0.5'
+    implementation 'dev.miku:r2dbc-mysql:0.8.2.RELEASE'
+}
+
+
+bootJar {
+    archiveFileName = 'gateway.jar'
 }
 
 dependencyManagement {

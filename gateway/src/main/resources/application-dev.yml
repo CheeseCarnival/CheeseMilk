@@ -1,10 +1,10 @@
 spring:
   cloud:
     nacos:
-      server-addr: sfo.cheeseocean.com:8848
+      server-addr: 127.0.0.1:8848
   redis:
-    password: cheeseocean.com
-    host: sfo.cheeseocean.com
+    password: www.cheeseocean.com
+    host: 127.0.0.1
   r2dbc:
     password: xc514xxx
     username: root

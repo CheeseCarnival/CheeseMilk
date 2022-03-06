@@ -16,8 +16,7 @@ spring:
     show-sql: true
   cloud:
     nacos:
-      server-addr: sfo.cheeseocean.com
-      username: nacos
+      server-addr: 127.0.0.1:8848
   redis:
-    host: sfo.cheeseocean.com
-    password: cheeseocean.com
+    host: 127.0.0.1
+    password: redis.cheeseocean.com

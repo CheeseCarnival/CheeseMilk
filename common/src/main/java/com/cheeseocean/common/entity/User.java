@@ -14,6 +14,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.AllArgsConstructor;
@@ -63,6 +64,7 @@ public class User extends BasicEntity implements Serializable {
     private Integer gender;
 
     @OneToMany
+    @Transient
     private Set<Role> roles;
 
     public enum UserStatus {

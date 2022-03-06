@@ -23,6 +23,7 @@ public abstract class BasicEntity {
 
     @Id
     @GeneratedValue
+    @org.springframework.data.annotation.Id
     protected Long id;
 
     private String remark;

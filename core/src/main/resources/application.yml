@@ -2,6 +2,10 @@ server:
   port: 7401
   error:
     include-exception: on
+  servlet:
+    session:
+      cookie:
+        name: SESSION
 spring:
   application:
     name: core

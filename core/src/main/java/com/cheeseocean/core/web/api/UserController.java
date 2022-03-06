@@ -1,14 +1,20 @@
 package com.cheeseocean.core.web.api;
 
+import java.security.Principal;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.cheeseocean.common.annotation.CurrentUser;
+import com.cheeseocean.common.entity.User;
+import com.cheeseocean.common.repository.UserRepository;
 import com.cheeseocean.core.service.PostService;
 import com.cheeseocean.core.service.UserService;
 
@@ -17,6 +23,7 @@ import com.cheeseocean.core.service.UserService;
 @RequestMapping("/user")
 //@Validated
 //@SessionAttributes(value = "verifyDTO")
+@CrossOrigin
 public class UserController {
 
     private final Logger logger = LoggerFactory.getLogger(getClass().getName());
@@ -27,9 +34,13 @@ public class UserController {
     @Autowired
     private PostService postService;
 
+    @Autowired
+    private UserRepository userRepository;
+
 
     @GetMapping
-    public String greeting(){
+    public String greeting(Principal principal){
+        System.out.println(principal.getName());
         return "hello world";
     }
 
