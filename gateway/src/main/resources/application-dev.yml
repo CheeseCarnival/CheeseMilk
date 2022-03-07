@@ -1,12 +1,6 @@
 spring:
-  cloud:
-    nacos:
-      server-addr: 127.0.0.1:8848
-  redis:
-    password: www.cheeseocean.com
-    host: 127.0.0.1
-  r2dbc:
-    password: xc514xxx
-    username: root
+ r2dbc:
+    password: mysql.cheeseocean.com
+    username: cheeseocean
     name: cheeseocean
-    url: r2dbc:pool:mysql://korea.cheeseocean.com:3306/cheeseocean
+    url: r2dbc:pool:mysql://127.0.0.1:3306/cheeseocean

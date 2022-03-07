@@ -1,22 +1,5 @@
 spring:
+  config:
+    import: classpath:application-common-dev.yml
   datasource:
-    username: root
-    password: xc514xxx
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://korea.cheeseocean.com:3306/cheeseocean
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.MySQL8Dialect
-    database: mysql
-    generate-ddl: true
-    show-sql: true
-  cloud:
-    nacos:
-      server-addr: 127.0.0.1:8848
-  redis:
-    host: 127.0.0.1
-    password: redis.cheeseocean.com
