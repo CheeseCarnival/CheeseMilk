@@ -10,7 +10,6 @@ import javax.persistence.Table;
 
 import org.hibernate.Hibernate;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -40,7 +39,7 @@ public class Course extends BasicEntity {
 
     @JoinColumn(name = "user_id")
     @ManyToOne
-    private User user;
+    private UserInfo userInfo;
 
     @Override
     public boolean equals(Object o) {

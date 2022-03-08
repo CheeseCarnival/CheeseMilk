@@ -28,33 +28,16 @@ public class ServerJsonLoginAuthenticationConverter implements ServerAuthenticat
                         ResolvableType.forType(LoginEntity.class),
                         null,
                         Collections.emptyMap())
-                .map(body -> new UsernamePasswordAuthenticationToken(((LoginEntity) body).getUsername(), ((LoginEntity) body).getPassword()))
+                .map(body -> convertToAuthentication(((LoginEntity) body)))
                 .single()
                 .cast(Authentication.class);
     }
 
-    public static class LoginEntity {
-        private String username;
-        private String password;
-
-        public LoginEntity() {
-
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public String getUsername() {
-            return username;
-        }
+    private Authentication convertToAuthentication(LoginEntity loginEntity){
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(loginEntity.getIdentifier(), loginEntity.getCredential());
+        LoginAuthenticationDetails details = new LoginAuthenticationDetails();
+        details.setIdentifyType(loginEntity.getType());
+        token.setDetails(details);
+        return token;
     }
 }

@@ -4,8 +4,11 @@ import javax.persistence.AttributeConverter;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.cheeseocean.common.exception.UnexpectedException;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,8 +23,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UserAuth extends BasicEntity{
 
-    @OneToOne
-    private User user;
+    @ManyToOne
+    private UserInfo userInfo;
 
     @Convert(converter = IdentityTypeConverter.class)
     @Column(name = "identity_type")
@@ -37,7 +40,9 @@ public class UserAuth extends BasicEntity{
     private boolean bindFlag;
 
     public enum IdentityType{
-        INNER("inner"),
+        USERNAME("username"),
+        EMAIL("email"),
+        PHONE("phone"),
         WECHAT("wechat"),
         QQ("qq"),
         GITHUB("github");
@@ -46,19 +51,18 @@ public class UserAuth extends BasicEntity{
         IdentityType(String typeName){
             this.typeName = typeName;
         }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
         public static IdentityType from(String value){
-            switch (value){
-                case "inner":
-                    return INNER;
-                case "wechat":
-                    return WECHAT;
-                case "qq":
-                    return QQ;
-                case "github":
-                    return GITHUB;
-                default:
-                    throw new IllegalArgumentException("No such IdentityType value: " + value);
+            for (IdentityType identityType : IdentityType.values()) {
+                if (identityType.typeName.equals(value)){
+                    return identityType;
+                }
             }
+            throw new UnexpectedException("Not supported IdentityType");
         }
     }
     static class IdentityTypeConverter implements AttributeConverter<IdentityType, String>{

@@ -6,12 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
-import com.cheeseocean.common.entity.User;
+import com.cheeseocean.common.entity.UserInfo;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
+public interface UserRepository extends JpaRepository<UserInfo, Long>, JpaSpecificationExecutor<UserInfo> {
 
-    Optional<User> findByUsername(String username);
+    Optional<UserInfo> findByUsername(String username);
 
-    Optional<User> findByEmail(String email);
+    Optional<UserInfo> findByEmail(String email);
 }

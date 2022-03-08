@@ -4,9 +4,10 @@ import org.springframework.data.r2dbc.repository.R2dbcRepository;
 import org.springframework.stereotype.Repository;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Repository
-public interface UserRepository extends R2dbcRepository<User, Long> {
+public interface UserAuthRepository extends R2dbcRepository<UserAuth, Long> {
 
-    Flux<User> findByUsername(String name);
+    Mono<UserAuth> findByIdentifyTypeAndIdentifier(String type, String identifier);
 }

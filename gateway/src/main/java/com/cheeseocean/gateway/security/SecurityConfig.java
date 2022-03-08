@@ -43,9 +43,6 @@ import reactor.core.publisher.Mono;
 @EnableWebFluxSecurity
 public class SecurityConfig implements BeanClassLoaderAware {
 
-    @Autowired
-    private R2dbcReactiveUserDetailsService userDetailsService;
-
     @Bean
     SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         // @formatter:off
@@ -71,11 +68,15 @@ public class SecurityConfig implements BeanClassLoaderAware {
         return new BCryptPasswordEncoder();
     }
 
+    @Autowired
+    ReactiveUserDetailsServiceImpl userDetailsService;
+
     @Bean
     ReactiveAuthenticationManager authenticationManager() {
-        UserDetailsRepositoryReactiveAuthenticationManager authenticationManager =
-                new UserDetailsRepositoryReactiveAuthenticationManager(userDetailsService);
+        UserDetailsReactiveAuthenticationManager authenticationManager =
+                new UserDetailsReactiveAuthenticationManager();
         authenticationManager.setUserDetailsPasswordService(userDetailsService);
+        authenticationManager.setUserDetailsService(userDetailsService);
         authenticationManager.setPasswordEncoder(passwordEncoder());
         return authenticationManager;
     }
@@ -132,29 +133,5 @@ public class SecurityConfig implements BeanClassLoaderAware {
     public DefaultCookieSerializerCustomizer cookieSerializerCustomizer() {
         return cookieSerializer -> {cookieSerializer.setUseBase64Encoding(false);};
     }
-
-//    @Bean
-//    public WebSessionIdResolver webSessionIdResolver() {
-//        CookieWebSessionIdResolver resolver = new CookieWebSessionIdResolver();
-//        resolver.addCookieInitializer(builder -> builder.sameSite("None"));
-//        return resolver;
-//    }
-
-//    @Bean
-//    MapReactiveUserDetailsService userDetailsService() {
-//        // @formatter:off
-//        UserDetails user = User.withDefaultPasswordEncoder()
-//                .username("user")
-//                .password("user")
-//                .roles("USER")
-//                .build();
-//        UserDetails admin = User.withDefaultPasswordEncoder()
-//                .username("admin")
-//                .password("admin")
-//                .roles("ADMIN", "USER")
-//                .build();
-//        // @formatter:on
-//        return new MapReactiveUserDetailsService(user, admin);
-//    }
 
 }

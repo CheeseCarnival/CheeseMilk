@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tbl_user")
+@Table(name = "tbl_user_info")
 @DynamicInsert
 @DynamicUpdate
 @Getter
@@ -31,23 +31,17 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-public class User extends BasicEntity implements Serializable {
+public class UserInfo extends BasicEntity implements Serializable {
 
     private static final long serialVersionUID = 749792921653839187L;
 
-    //eg:studentId, teacherId, staffId...
-    @Column(name = "username", unique = true)
     private String username;
-
-    private String password;
 
     private String nickname;
 
-    @Column(name = "status")
     @Enumerated(EnumType.ORDINAL)
     private UserStatus status;
 
-    @Column(name = "email", unique = true)
     private String email;
 
     @Column(name = "avatar_url")
