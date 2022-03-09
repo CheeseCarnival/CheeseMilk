@@ -68,6 +68,10 @@ public class SecurityConfig implements BeanClassLoaderAware {
         return new BCryptPasswordEncoder();
     }
 
+    public static void main(String[] args) {
+        System.out.println(new BCryptPasswordEncoder().encode("helloxc"));
+    }
+
     @Autowired
     ReactiveUserDetailsServiceImpl userDetailsService;
 

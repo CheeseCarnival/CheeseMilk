@@ -1,6 +1,11 @@
+store:
+  host:
+    mysql-r2dbc: sfo.cheeseocean.com
 spring:
- r2dbc:
+  r2dbc:
     password: mysql.cheeseocean.com
     username: cheeseocean
     name: cheeseocean
-    url: r2dbc:pool:mysql://127.0.0.1:3306/cheeseocean
+    url: r2dbc:pool:mysql://${store.host.mysql-r2dbc}:3306/cheeseocean
+  config:
+    import: classpath:application-common-dev.yml

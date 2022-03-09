@@ -13,9 +13,9 @@ import com.cheeseocean.common.entity.UserInfo;
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long> {
 
-    List<Course> findAllByUser(UserInfo userInfo);
+    List<Course> findAllByUserInfo(UserInfo userInfo);
 
     @Modifying
-    void deleteAllByUser(UserInfo userInfo);
+    void deleteAllByUserInfo(UserInfo userInfo);
 
 }

@@ -1,8 +1,16 @@
+store:
+  host:
+#    nacos: 127.0.0.1
+#    redis: 127.0.0.1
+#    mysql: 127.0.0.1
+    nacos: sfo.cheeseocean.com
+    redis: sfo.cheeseocean.com
+    mysql: sfo.cheeseocean.com
 spring:
   datasource:
     username: cheeseocean
     password: mysql.cheeseocean.com
-    url: jdbc:mysql://127.0.0.1:3306/cheeseocean
+    url: jdbc:mysql://${store.host.mysql}:3306/cheeseocean
   jpa:
     hibernate:
       ddl-auto: update
@@ -15,7 +23,7 @@ spring:
     show-sql: true
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848
+      server-addr: ${store.host.nacos}:8848
   redis:
-    host: 127.0.0.1
+    host: ${store.host.redis}
     password: redis.cheeseocean.com

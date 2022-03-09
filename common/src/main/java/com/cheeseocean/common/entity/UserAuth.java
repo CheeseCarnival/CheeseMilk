@@ -5,7 +5,6 @@ import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.cheeseocean.common.exception.UnexpectedException;
@@ -27,8 +26,8 @@ public class UserAuth extends BasicEntity{
     private UserInfo userInfo;
 
     @Convert(converter = IdentityTypeConverter.class)
-    @Column(name = "identity_type")
-    private IdentityType identityType;
+    @Column(name = "identify_type")
+    private IdentityType identifyType;
 
     @Column(name = "identifier")
     private String identifier;

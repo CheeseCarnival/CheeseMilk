@@ -9,7 +9,7 @@ public class UserAuth {
     @Id
     private Long id;
 
-    private Long userId;
+    private Long userInfoId;
 
     private String identifier;
 
@@ -31,12 +31,12 @@ public class UserAuth {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getUserInfoId() {
+        return userInfoId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUserInfoId(Long userInfoId) {
+        this.userInfoId = userInfoId;
     }
 
     public String getIdentifier() {
