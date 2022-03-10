@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import com.cheeseocean.common.entity.Role;
-import com.cheeseocean.gateway.repository.RoleRepository;
+import com.cheeseocean.common.exception.ExpectedException;
+import com.cheeseocean.gateway.repository.UserAuthWithRole;
 import com.cheeseocean.gateway.repository.UserAuthRepository;
 
 import reactor.core.publisher.Mono;
@@ -15,27 +15,23 @@ import reactor.core.publisher.Mono;
 @Service
 public class ReactiveUserDetailsServiceImpl implements ReactiveUserDetailsService, ReactiveUserDetailsPasswordService {
 
+
     private UserAuthRepository userAuthRepository;
 
-    private RoleRepository roleRepository;
-
     @Autowired
-    public void setUserAuthRepository(UserAuthRepository userAuthRepository) {
+    public void setRoleRepository(UserAuthRepository userAuthRepository) {
         this.userAuthRepository = userAuthRepository;
-    }
-
-    @Autowired
-    public void setRoleRepository(RoleRepository roleRepository) {
-        this.roleRepository = roleRepository;
     }
 
     @Override
     public Mono<UserDetails> findByUsernameAndDetails(String username, Object details) {
-        return userAuthRepository.findByIdentifyTypeAndIdentifier(((LoginAuthenticationDetails) details).getIdentifyType(), username)
-                .map(userAuth -> User.builder().username(userAuth.getIdentifier())
-                        .password(userAuth.getCredential()).roles(roleRepository.findRolesByUserId(userAuth.getUserInfoId()))).cast(UserDetails.class);
+        return userAuthRepository.findUserDetailsByIdentifierAndType(username, ((LoginAuthenticationDetails) details).getIdentifyType())
+                .map(detailsList -> User.builder()
+                        .username(detailsList.get(0).getIdentifier())
+                        .password(detailsList.get(0).getCredential())
+                        .roles(detailsList.stream().map(UserAuthWithRole::getRoleName).toArray(String[]::new))
+                        .build());
     }
-
 
     @Override
     public Mono<UserDetails> updatePassword(UserDetails user, String newPassword) {

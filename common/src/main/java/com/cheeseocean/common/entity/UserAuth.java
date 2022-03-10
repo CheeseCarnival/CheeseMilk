@@ -4,6 +4,7 @@ import javax.persistence.AttributeConverter;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -23,6 +24,7 @@ import lombok.Setter;
 public class UserAuth extends BasicEntity{
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private UserInfo userInfo;
 
     @Convert(converter = IdentityTypeConverter.class)

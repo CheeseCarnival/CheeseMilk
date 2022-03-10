@@ -9,6 +9,11 @@ import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.ForeignKey;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.MapKeyJoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -22,8 +27,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "tbl_user_info")
+@Entity(name = "User")
+@Table(name = "tbl_user")
 @DynamicInsert
 @DynamicUpdate
 @Getter
@@ -58,7 +63,13 @@ public class UserInfo extends BasicEntity implements Serializable {
     private Integer gender;
 
     @OneToMany
-    @Transient
+    @JoinTable(name = "tbl_user_role",
+            joinColumns = {
+                    @JoinColumn(name = "user_id", referencedColumnName = "id")
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(name = "role_id", referencedColumnName = "id")
+            })
     private Set<Role> roles;
 
     public enum UserStatus {
