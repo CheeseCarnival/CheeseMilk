@@ -1,8 +1,0 @@
-version: "3.9"
-services:
-  gateway:
-    image: xxxcrel/cheese-gateway
-    container_name: niot-gateway
-  search:
-    image: xxxcrel/cheese-search
-    container_name: niot-search

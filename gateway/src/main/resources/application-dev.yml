@@ -1,6 +1,8 @@
+
 store:
   host:
-    mysql-r2dbc: sfo.cheeseocean.com
+#    mysql-r2dbc: sfo.cheeseocean.com
+    mysql-r2dbc: localhost
 spring:
   r2dbc:
     password: mysql.cheeseocean.com
