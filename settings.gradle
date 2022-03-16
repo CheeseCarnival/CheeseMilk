@@ -19,4 +19,5 @@ include 'community'
 include 'resource-server'
 include 'websocket-server'
 include 'api'
+include 'message'
 

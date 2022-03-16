@@ -1,11 +1,58 @@
+plugins{
+    id 'java'
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
+    id 'io.freefair.lombok'
+    id 'maven-publish'
+}
 ext{
     set("springCloudVersion", "2021.0.1")
     set("alibabaCloudVersion", "2021.0.1.0")
     set("springDataR2DBC", "Borca-RELEASE")
 }
 allprojects{
+    group = 'com.cheeseocean'
+    version = '1.0.0'
     repositories {
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/public' }
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'io.freefair.lombok'
+    apply plugin: 'maven-publish'
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+        implementation platform("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
+        implementation platform("com.alibaba.cloud:spring-cloud-alibaba-dependencies:${alibabaCloudVersion}")
+        implementation platform("io.r2dbc:r2dbc-bom:${springDataR2DBC}")
+    }
+
+    task apiJar (type: Jar){
+        from(sourceSets.main.output){
+            include 'com/cheeseocean/*/api/**'
+        }
+        archiveClassifier = 'api'
+    }
+
+    task apiSourceJar(type: Jar){
+        from(sourceSets.main.allSource){
+            include 'com/cheeseocean/*/api/**'
+        }
+        archiveClassifier = 'source'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    bootJar {
+        archiveFileName = "${project.name}.jar"
     }
 }

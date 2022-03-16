@@ -4,6 +4,6 @@ build
 target
 out
 .vscode
-**/build
+**/build/**
 **/out
 **/target

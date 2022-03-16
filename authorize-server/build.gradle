@@ -1,21 +1,4 @@
-plugins {
-    id 'java'
-}
-
-group 'com.cheeseocean'
-version '1.0'
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
 //    implementation 'org.springframework.security:spring-security-oauth2-authorization-server:0.2.2'
     implementation group: 'apache-oro', name: 'jakarta-oro', version: '2.0.8'
-}
-
-test {
-    useJUnitPlatform()
 }
