@@ -11,8 +11,6 @@ ext{
     set("springDataR2DBC", "Borca-RELEASE")
 }
 allprojects{
-    group = 'com.cheeseocean'
-    version = '1.0.0'
     repositories {
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/public' }
@@ -22,9 +20,11 @@ allprojects{
 subprojects {
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
-    apply plugin: 'io.spring.dependency-management'
     apply plugin: 'io.freefair.lombok'
     apply plugin: 'maven-publish'
+
+    group = 'com.cheeseocean'
+    version = '1.0.0'
 
     dependencies {
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
@@ -46,6 +46,44 @@ subprojects {
             include 'com/cheeseocean/*/api/**'
         }
         archiveClassifier = 'source'
+    }
+
+    publishing {
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/cheeseocean/CheesePackages")
+                credentials {
+                    username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                    password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+                }
+            }
+        }
+        publications {
+            gpr(MavenPublication) {
+                artifactId "${project.name}-api"
+                from(components.java)
+                artifact apiJar
+                pom {
+                    name = "${project.name} API Jar"
+                    description = "CheeseMilk API dependencies"
+                    url = "http://github.com/cheeseocean/CheeseMilk"
+                    licenses {
+                        license {
+                            name = "The Apache License, Version 2.0"
+                            url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = "xxxcrel"
+                            name = "xxxcrel"
+                            email = "crelxc@gmail.com"
+                        }
+                    }
+                }
+            }
+        }
     }
 
     test {
