@@ -1,6 +1,10 @@
 package com.cheeseocean.message.api;
 
-public class SendRequest {
+import java.io.Serializable;
+
+public class SendRequest implements Serializable {
+
+    private static final long serialVersionUID = -81791163265289846L;
 
     private String author;
     private String src;

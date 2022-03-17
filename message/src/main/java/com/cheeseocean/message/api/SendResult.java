@@ -1,6 +1,9 @@
 package com.cheeseocean.message.api;
 
-public class SendResult {
+import java.io.Serializable;
+
+public class SendResult implements Serializable {
+    private static final long serialVersionUID = -81791163265289846L;
 
     private int code;
 
