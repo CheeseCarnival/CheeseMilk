@@ -1,5 +1,4 @@
 dependencies {
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation project(':common')
     // Spring Security
     implementation 'org.springframework.boot:spring-boot-starter-security'

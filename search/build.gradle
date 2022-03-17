@@ -1,27 +1,5 @@
-plugins {
-    id 'java'
-    id 'io.spring.dependency-management'
-    id 'org.springframework.boot'
-    id 'io.freefair.lombok'
-}
-
-group 'cn.qisee'
-version '1.0.0'
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
     implementation 'org.apache.dubbo:dubbo:2.7.15'
     implementation 'org.springframework.data:spring-data-elasticsearch'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-}
-
-test {
-    useJUnitPlatform()
 }

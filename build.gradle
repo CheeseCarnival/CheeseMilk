@@ -1,19 +1,29 @@
 plugins{
     id 'java'
     id 'org.springframework.boot'
-    id 'io.spring.dependency-management'
     id 'io.freefair.lombok'
     id 'maven-publish'
 }
+
 ext{
     set("springCloudVersion", "2021.0.1")
     set("alibabaCloudVersion", "2021.0.1.0")
     set("springDataR2DBC", "Borca-RELEASE")
 }
 allprojects{
+    group = 'com.cheeseocean'
+    version = '1.0.0'
+
     repositories {
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/public' }
+        maven {
+            url = uri("https://maven.pkg.github.com/cheeseocean/CheesePackages")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
+        }
     }
 }
 
@@ -23,8 +33,6 @@ subprojects {
     apply plugin: 'io.freefair.lombok'
     apply plugin: 'maven-publish'
 
-    group = 'com.cheeseocean'
-    version = '1.0.0'
 
     dependencies {
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
@@ -32,20 +40,20 @@ subprojects {
         implementation platform("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
         implementation platform("com.alibaba.cloud:spring-cloud-alibaba-dependencies:${alibabaCloudVersion}")
         implementation platform("io.r2dbc:r2dbc-bom:${springDataR2DBC}")
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 
     task apiJar (type: Jar){
         from(sourceSets.main.output){
             include 'com/cheeseocean/*/api/**'
         }
-        archiveClassifier = 'api'
     }
 
     task apiSourceJar(type: Jar){
         from(sourceSets.main.allSource){
             include 'com/cheeseocean/*/api/**'
         }
-        archiveClassifier = 'source'
+        archiveClassifier = 'sources'
     }
 
     publishing {
@@ -62,8 +70,9 @@ subprojects {
         publications {
             gpr(MavenPublication) {
                 artifactId "${project.name}-api"
-                from(components.java)
+                version "1.0.1"
                 artifact apiJar
+                artifact apiSourceJar
                 pom {
                     name = "${project.name} API Jar"
                     description = "CheeseMilk API dependencies"

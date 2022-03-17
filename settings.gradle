@@ -9,7 +9,6 @@ pluginManagement {
 }
 
 rootProject.name = 'CheeseMilk'
-include 'registry'
 include 'gateway'
 include 'common'
 include 'core'
@@ -17,7 +16,6 @@ include 'search'
 include 'registry'
 include 'community'
 include 'resource-server'
-include 'websocket-server'
-include 'api'
+include 'ws-server'
 include 'message'
 

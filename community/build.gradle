@@ -1,34 +1,5 @@
-plugins {
-    id 'java'
-    id 'org.springframework.boot'
-    id 'io.spring.dependency-management'
-    id 'io.freefair.lombok'
-}
-
-group 'com.cheeseocean'
-version '1.0.0'
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-
+    implementation 'com.cheeseocean:message-api:1.0.1'
     implementation 'io.lettuce:lettuce-core:6.1.0.RELEASE'
-//    implementation 'org.apache.dubbo:dubbo:2.7.15'
-//    implementation 'org.apache.dubbo:dubbo-spring-boot-starter:2.7.15'
     implementation 'com.alibaba.cloud:spring-cloud-starter-dubbo'
-}
-
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-        mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${alibabaCloudVersion}"
-        mavenBom "io.r2dbc:r2dbc-bom:${springDataR2DBC}"
-    }
-}
-test {
-    useJUnitPlatform()
 }

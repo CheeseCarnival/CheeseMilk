@@ -1,4 +1,0 @@
-dependencies {
-//    implementation 'org.springframework.security:spring-security-oauth2-authorization-server:0.2.2'
-    implementation group: 'apache-oro', name: 'jakarta-oro', version: '2.0.8'
-}

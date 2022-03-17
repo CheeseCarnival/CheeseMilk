@@ -2,5 +2,3 @@ dependencies {
     implementation 'io.lettuce:lettuce-core:6.1.0.RELEASE'
     implementation 'com.alibaba.cloud:spring-cloud-starter-dubbo'
 }
-
-
