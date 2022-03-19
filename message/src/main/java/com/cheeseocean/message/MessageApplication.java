@@ -9,10 +9,14 @@ import org.apache.dubbo.config.ProtocolConfig;
 import org.apache.dubbo.config.RegistryConfig;
 import org.apache.dubbo.config.ServiceConfig;
 import org.apache.dubbo.config.bootstrap.DubboBootstrap;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.cheeseocean.message.api.MessageService;
 import com.cheeseocean.message.service.MessageServiceImpl;
 
+@SpringBootApplication
+@EnableDubbo
 public class MessageApplication {
 
     public static void main(String[] args) {

@@ -19,8 +19,8 @@ public class CommunityApplication {
         ReferenceConfig<MessageService> reference = new ReferenceConfig<>();
         reference.setInterface(MessageService.class);
         reference.setGeneric("false");
-//        reference.setStub("com.cheeseocean.dubbo.consumer.CustomMessageServiceStub");
-//        reference.setOnconnect("onConnect");
+        reference.setStub("com.cheeseocean.community.service.MessageServiceLocal");
+        reference.setOndisconnect("onDisconnect");
 //        reference.setUrl("dubbo://127.0.0.1:20880/com.cheeseocean.dubbo.provider.MessageService");
 
         DubboBootstrap bootstrap = DubboBootstrap.getInstance();
