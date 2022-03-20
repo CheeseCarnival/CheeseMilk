@@ -11,7 +11,7 @@ import com.cheeseocean.common.entity.BasicEntity;
 import com.cheeseocean.common.enums.ResourceType;
 
 @Entity
-@Table(name = "tbl_start")
+@Table(name = "tbl_star")
 public class Star extends BasicEntity {
 
     private Long uid;

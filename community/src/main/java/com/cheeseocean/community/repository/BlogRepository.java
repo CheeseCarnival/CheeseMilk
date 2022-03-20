@@ -21,13 +21,13 @@ public interface BlogRepository extends JpaRepository<Blog, Long> {
 
     Page<Blog> getAllByCategoryAndCreatedAtAfterAndCreatedAtBefore(Category category, LocalDateTime start, LocalDateTime end, Pageable pageable);
 
-    @Modifying
-    @Query("update Blog p set p.commentCount = p.commentCount + :increment where p.id = :pid")
-    void updateComments(@Param("pid") Long pid, @Param("increment") int increment);
+//    @Modifying
+//    @Query("update Blog p set p.commentCount = p.commentCount + :increment where p.id = :pid")
+//    void updateComments(@Param("pid") Long pid, @Param("increment") int increment);
 
-    @Modifying
-    @Query("update Blog p set p.starCount = p.starCount + :increment where p.id = :pid")
-    void updateStars(@Param("pid") Long pid, @Param("increment") int increment);
+//    @Modifying
+//    @Query("update Blog p set p.starCount = p.starCount + :increment where p.id = :pid")
+//    void updateStars(@Param("pid") Long pid, @Param("increment") int increment);
 
 //    @EntityGraph(attributePaths = {"posts"}, type = EntityGraph.EntityGraphType.FETCH)
 //    User findByNickname(String nickname);

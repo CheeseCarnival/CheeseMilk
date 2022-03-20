@@ -3,9 +3,13 @@ server:
 spring:
   config:
     import: classpath:application-common.yml
+  application:
+    name: community
   mongodb:
     embedded:
       version: 5.0
+  profiles:
+    active: dev
   data:
     mongodb:
       username: cheeseocean

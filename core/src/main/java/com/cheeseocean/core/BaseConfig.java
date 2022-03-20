@@ -17,7 +17,6 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Configuration
-@EnableCaching
 @EnableRedisHttpSession
 @EntityScan("com.cheeseocean.core.entity")
 @EnableJpaRepositories(basePackages = "com.cheeseocean.core.repository")

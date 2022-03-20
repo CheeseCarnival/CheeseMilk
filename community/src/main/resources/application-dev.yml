@@ -8,9 +8,9 @@ spring:
 dubbo:
   protocol:
     name: dubbo
-    port: 17401
+    port: 17402
   registry:
     address: nacos://127.0.0.1:8848
     group: INTERNAL_SERVICE
   application:
-    name: core
+    name: community

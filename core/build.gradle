@@ -22,5 +22,5 @@ dependencies {
 //    implementation 'org.springframework.security:spring-security-acl:5.5.0'
     implementation 'org.flywaydb:flyway-core'
     //Apache Dubbo
-    implementation 'org.apache.dubbo:dubbo-spring-boot-starter:${dubboVersion}'
+    implementation "org.apache.dubbo:dubbo-spring-boot-starter:${dubboVersion}"
 }
