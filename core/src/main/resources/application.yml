@@ -10,3 +10,5 @@ spring:
     type: org.apache.commons.dbcp2.BasicDataSource
   profiles:
     active: dev
+  main:
+    allow-bean-definition-overriding: true

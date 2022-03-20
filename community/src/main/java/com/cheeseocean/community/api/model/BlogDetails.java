@@ -1,9 +1,6 @@
 package com.cheeseocean.community.api.model;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
-
-import com.cheeseocean.community.entity.Blog;
 
 public class BlogDetails {
 
@@ -107,18 +104,6 @@ public class BlogDetails {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-
-    public static BlogDetails from(Blog blog) {
-        return new BlogDetails.Builder()
-                .uid(blog.getUid())
-                .category(blog.getCategory().getCategoryName())
-                .tags(blog.getTags())
-                .content(blog.getContent())
-                .createdAt(blog.getCreatedAt())
-                .updatedAt(blog.getUpdatedAt())
-                .build();
     }
 
     public static final class Builder {

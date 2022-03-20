@@ -7,6 +7,8 @@ public class BlogVO {
     UserDetails userInfo;
     BlogDetails blogInfo;
 
+    public BlogVO(){}
+
     private BlogVO(Builder builder) {
         setUserInfo(builder.userInfo);
         setBlogInfo(builder.blogInfo);

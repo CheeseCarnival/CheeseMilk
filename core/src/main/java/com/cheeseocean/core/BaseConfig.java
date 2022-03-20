@@ -1,5 +1,6 @@
 package com.cheeseocean.core;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.beans.factory.BeanClassLoaderAware;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.session.DefaultCookieSerializerCustomizer;
@@ -21,6 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @EntityScan("com.cheeseocean.core.entity")
 @EnableJpaRepositories(basePackages = "com.cheeseocean.core.repository")
 @EnableJpaAuditing
+@EnableDubbo(scanBasePackages = "com.cheeseocean.core.service")
 public class BaseConfig implements BeanClassLoaderAware {
 
     private ClassLoader classLoader;

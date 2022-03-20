@@ -3,3 +3,12 @@ spring:
     import: classpath:application-common-dev.yml
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    enabled: true
+dubbo:
+  protocol:
+    name: dubbo
+    port: 17401
+  registry:
+    address: nacos://127.0.0.1:8848
+    group: INTERNAL_SERVICE

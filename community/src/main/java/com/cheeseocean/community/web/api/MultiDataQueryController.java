@@ -1,4 +1,4 @@
-package com.cheeseocean.community.web;
+package com.cheeseocean.community.web.api;
 
 import org.springframework.web.bind.annotation.RestController;
 

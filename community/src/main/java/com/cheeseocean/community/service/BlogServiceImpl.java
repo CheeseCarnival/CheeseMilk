@@ -29,7 +29,8 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Slice<BlogDetails> listBlog(Pageable pageable) {
         Page<Blog> rawBlogList = blogRepository.findAll(pageable);
-        return rawBlogList.map(BlogDetails::from);
+//        return rawBlogList.map(BlogDetails);
+        return null;
     }
 
     @Override

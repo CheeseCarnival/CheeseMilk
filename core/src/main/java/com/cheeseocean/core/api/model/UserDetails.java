@@ -1,8 +1,5 @@
 package com.cheeseocean.core.api.model;
 
-
-import com.cheeseocean.core.entity.UserInfo;
-
 public class UserDetails {
     private Long uid;
 
@@ -35,20 +32,6 @@ public class UserDetails {
         setGender(builder.gender);
         setEmail(builder.email);
         setStatus(builder.status);
-    }
-
-    public static UserDetails from(UserInfo userInfo){
-        return UserDetails.newBuilder()
-                .uid(userInfo.getId())
-                .username(userInfo.getUsername())
-                .nickname(userInfo.getNickname())
-                .avatarUrl(userInfo.getAvatarUrl())
-                .location(userInfo.getLocation())
-                .bio(userInfo.getBio())
-                .gender(userInfo.getGender())
-                .email(userInfo.getEmail())
-                .status(userInfo.getStatus().name())
-                .build();
     }
 
     public static Builder newBuilder() {

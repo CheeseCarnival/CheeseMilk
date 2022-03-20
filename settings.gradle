@@ -3,6 +3,7 @@ pluginManagement {
         id 'org.springframework.boot' version '2.6.3'
         id 'com.google.protobuf' version '0.8.15'
         id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+        id "org.flywaydb.flyway" version "8.5.4"
     }
 }
 
