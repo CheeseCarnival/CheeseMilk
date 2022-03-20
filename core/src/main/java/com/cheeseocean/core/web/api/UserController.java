@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cheeseocean.common.repository.UserRepository;
-import com.cheeseocean.core.service.PostService;
-import com.cheeseocean.core.service.UserService;
+import com.cheeseocean.core.repository.UserRepository;
+import com.cheeseocean.core.service.UserServiceImpl;
 
 
 @RestController
@@ -25,17 +24,14 @@ public class UserController {
     private final Logger logger = LoggerFactory.getLogger(getClass().getName());
 
     @Autowired
-    private UserService userService;
-
-    @Autowired
-    private PostService postService;
+    private UserServiceImpl userServiceImpl;
 
     @Autowired
     private UserRepository userRepository;
 
 
     @GetMapping
-    public String greeting(Principal principal){
+    public String greeting(Principal principal) {
         System.out.println(principal.getName());
         return "hello world";
     }

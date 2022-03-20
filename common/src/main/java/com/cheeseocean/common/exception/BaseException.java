@@ -3,12 +3,26 @@ package com.cheeseocean.common.exception;
 import org.springframework.util.ObjectUtils;
 
 import com.cheeseocean.common.web.response.IResultStatus;
-import lombok.Getter;
 
-@Getter
 public class BaseException extends RuntimeException {
     Object data;
     IResultStatus status;
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
+    public IResultStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(IResultStatus status) {
+        this.status = status;
+    }
 
     public BaseException(IResultStatus status) {
         super(status.getMessage());

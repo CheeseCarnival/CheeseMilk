@@ -1,0 +1,14 @@
+server:
+  port: 7402
+spring:
+  config:
+    import: classpath:application-common.yml
+  mongodb:
+    embedded:
+      version: 5.0
+  data:
+    mongodb:
+      username: cheeseocean
+      password: mongo.cheeseocean.com
+      host: localhost
+      database: cheeseocean

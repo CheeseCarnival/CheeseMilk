@@ -18,8 +18,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Configuration
 @EnableCaching
 @EnableRedisHttpSession
-@EntityScan("com.cheeseocean.common.entity")
-@EnableJpaRepositories(basePackages = "com.cheeseocean.common.repository")
+@EntityScan("com.cheeseocean.core.entity")
+@EnableJpaRepositories(basePackages = "com.cheeseocean.core.repository")
 @EnableJpaAuditing
 public class BaseConfig implements BeanClassLoaderAware {
 

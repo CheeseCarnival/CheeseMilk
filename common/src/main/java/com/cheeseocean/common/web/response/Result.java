@@ -1,10 +1,5 @@
 package com.cheeseocean.common.web.response;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Setter
-@Getter
 public class Result<T> {
 
     private int code;
@@ -12,6 +7,30 @@ public class Result<T> {
     private String message;
 
     private T data;
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
 
     public Result(ResultStatus status, T data){
         this.code = status.getCode();

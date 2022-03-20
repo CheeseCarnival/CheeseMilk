@@ -10,7 +10,7 @@ import org.springframework.data.mapping.model.FieldNamingStrategy;
 import org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy;
 
 @EnableElasticsearchRepositories
-@ComponentScan(basePackages = "cn.qisee.search.repository")
+@ComponentScan(basePackages = "com.cheeseocean.search.repository")
 @EnableAutoConfiguration
 @ImportAutoConfiguration(classes = ElasticsearchRestClientAutoConfiguration.class)
 public class RepositoryTestConfiguration extends ElasticsearchConfigurationSupport {

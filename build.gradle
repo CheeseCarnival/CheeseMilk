@@ -1,7 +1,8 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
 plugins{
     id 'java'
     id 'org.springframework.boot'
-    id 'io.freefair.lombok'
     id 'maven-publish'
 }
 //spring boot cloud and alibaba cloud version wiki:https://github.com/alibaba/spring-cloud-alibaba/wiki
@@ -31,18 +32,27 @@ allprojects{
 subprojects {
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
-    apply plugin: 'io.freefair.lombok'
     apply plugin: 'maven-publish'
 
 
     dependencies {
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+        testImplementation 'com.h2database:h2:1.4.200'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         implementation platform("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
-        implementation platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+        implementation platform(SpringBootPlugin.BOM_COORDINATES)
         implementation platform("com.alibaba.cloud:spring-cloud-alibaba-dependencies:${alibabaCloudVersion}")
         implementation platform("io.r2dbc:r2dbc-bom:${springDataR2DBC}")
+        //Spring Session
+        implementation 'org.springframework.session:spring-session-data-redis'
+        implementation 'io.lettuce:lettuce-core:6.1.0.RELEASE'
+        //Alibaba Nacos
+        implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
+        //Spring WebMvc
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        //Validation
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
     }
 
     task apiJar (type: Jar){
@@ -72,7 +82,8 @@ subprojects {
         publications {
             gpr(MavenPublication) {
                 artifactId "${project.name}-api"
-                version "1.0.2"
+                //using gradle module:publish -Dapi.version or edit in gradle.properties
+                version System.getProperty("api.version") ?: project.findProperty("${project.name}.api.version")
                 artifact apiJar
                 artifact apiSourceJar
                 pom {
