@@ -1,5 +1,4 @@
 dependencies {
-    implementation 'org.apache.dubbo:dubbo:2.7.15'
     implementation 'org.springframework.data:spring-data-elasticsearch'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 }

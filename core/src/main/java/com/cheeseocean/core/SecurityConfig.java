@@ -7,6 +7,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity(debug = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    public static void main(String[] args) {
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.requestCache().disable()

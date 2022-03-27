@@ -30,6 +30,17 @@ create table tbl_user_auth
     primary key (id)
 ) engine = InnoDB;
 
+create table tbl_role
+(
+    id            bigint not null,
+    created_at    datetime(6),
+    remark        varchar(255),
+    updated_at    datetime(6),
+    name    varchar(255),
+    permissions    bigint(10),
+    primary key (id)
+) engine = InnoDB;
+
 create table tbl_user_role
 (
     user_id bigint not null,
@@ -137,4 +148,4 @@ alter table tbl_user_role
 alter table tbl_user_role
     add constraint FKggc6wjqokl2vlw89y22a1j2oh
         foreign key (user_id)
-            references tbl_user (id);
+            references tbl_user (id)

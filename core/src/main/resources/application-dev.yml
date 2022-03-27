@@ -14,3 +14,4 @@ dubbo:
     group: INTERNAL_SERVICE
   application:
     name: core
+    register-mode: instance

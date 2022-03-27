@@ -14,3 +14,6 @@ dubbo:
     group: INTERNAL_SERVICE
   application:
     name: community
+    register-mode: instance
+  consumer:
+    check: false

@@ -1,9 +1,7 @@
 package com.cheeseocean.community.service;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,9 +13,9 @@ import com.cheeseocean.community.api.model.BlogDetails;
 import com.cheeseocean.community.entity.Blog;
 import com.cheeseocean.community.repository.BlogRepository;
 import com.cheeseocean.core.api.UserService;
-import com.cheeseocean.core.api.model.UserDetails;
 
 @Service
+@DubboService
 public class BlogServiceImpl implements BlogService {
 
     @DubboReference
