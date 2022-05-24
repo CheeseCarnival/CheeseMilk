@@ -1,11 +1,11 @@
 store:
   host:
-    nacos: 127.0.0.1
-    redis: 127.0.0.1
-    mysql: 127.0.0.1
-#    nacos: sfo.cheeseocean.com
-#    redis: sfo.cheeseocean.com
-#    mysql: sfo.cheeseocean.com
+#    nacos: 127.0.0.1
+#    redis: 127.0.0.1
+#    mysql: 127.0.0.1
+    nacos: korea.cheeseocean.com
+    redis: korea.cheeseocean.com
+    mysql: korea.cheeseocean.com
 spring:
   datasource:
     username: cheeseocean

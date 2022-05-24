@@ -17,3 +17,5 @@ spring:
     locale: zh_CN
   redis:
     client-name: luttece
+  flyway:
+    baseline-on-migrate: true
