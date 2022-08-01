@@ -38,9 +38,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import reactor.core.publisher.Mono;
 
-@Configuration
-@EnableReactiveMethodSecurity
-@EnableWebFluxSecurity
+//@Configuration
+//@EnableReactiveMethodSecurity
+//@EnableWebFluxSecurity
 public class SecurityConfig implements BeanClassLoaderAware {
 
     @Bean

@@ -12,7 +12,7 @@ import com.cheeseocean.common.util.CheeseOceanBanner;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableRedisWebSession
-@EnableR2dbcRepositories(basePackages = "com.cheeseocean.gateway.repository")
+//@EnableR2dbcRepositories(basePackages = "com.cheeseocean.gateway.repository")
 public class GatewayApplication {
 
     public static void main(String[] args) {

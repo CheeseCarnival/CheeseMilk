@@ -12,7 +12,7 @@ import com.cheeseocean.gateway.repository.UserAuthRepository;
 
 import reactor.core.publisher.Mono;
 
-@Service
+//@Service
 public class ReactiveUserDetailsServiceImpl implements ReactiveUserDetailsService, ReactiveUserDetailsPasswordService {
 
 
